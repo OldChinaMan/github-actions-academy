@@ -25,12 +25,12 @@ jobs:
       - name: Download code
         uses: actions/download-artifact@v4
         with:
-           path: code
-      - run: ls -lsa ; pwd ; cd code ; ls -lsa
+           name: code
+           path: .
+           
       - name: Run linting
         uses: super-linter/super-linter/slim@v7
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DEFAULT_WORKSPACE: ${{ github.workspace }}/code 
           DISABLE_ERRORS: true
