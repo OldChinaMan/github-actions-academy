@@ -24,6 +24,8 @@ jobs:
     steps:
       - name: Download code
         uses: actions/download-artifact@v4
+        with:
+           path: code
       - run: ls -lsa ; pwd ; cd code ; ls -lsa
       - name: Run linting
         uses: super-linter/super-linter/slim@v7
